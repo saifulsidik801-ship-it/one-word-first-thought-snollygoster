@@ -28,6 +28,8 @@ WORD = "snollygoster"
 
 
 def main() -> None:
+    # Self-check against the sealed gate: exactly one word, 1-24 chars.
+    assert WORD.isalpha() and 1 <= len(WORD) <= 24, "word fails the gate"
     os.makedirs("/output", exist_ok=True)
     with open("/output/entry.txt", "w", encoding="utf-8") as f:
         f.write(WORD)
